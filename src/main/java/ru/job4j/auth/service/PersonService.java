@@ -8,8 +8,6 @@ import ru.job4j.auth.repository.PersonRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Controller
 public class PersonService {
@@ -20,9 +18,7 @@ public class PersonService {
     }
 
     public List<Person> findAllPersons() {
-        return StreamSupport.stream(
-                this.personRepository.findAll().spliterator(), false
-        ).collect(Collectors.toList());
+        return personRepository.findAll();
 
     }
 
