@@ -13,7 +13,7 @@ public class Person {
     private String login;
     private String password;
 
-    public Person of(String login, String password) {
+    public static Person of(String login, String password) {
         Person person = new Person();
         person.login = login;
         person.password = password;
